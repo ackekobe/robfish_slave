@@ -213,16 +213,16 @@
           <Type>0</Type>
           <LineNumber>139</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134220482</Address>
+          <Address>134219670</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>E:\婊戠繑鏈烘枃妗ｄ笌璧勬枡\glider_code\glider_slave\HardDriver\LeakDetect\leak.c</Filename>
+          <Filename>..\HardDriver\LeakDetect\leak.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\glider_slave\../HardDriver/LeakDetect/leak.c\139</Expression>
+          <Expression></Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

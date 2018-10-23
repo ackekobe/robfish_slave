@@ -50,20 +50,27 @@ static void led0_thread_entry(void* parameter)
 //Ïß³ÌLED1
 static void led1_thread_entry(void* parameter)
 {
-//	u16 res = 0, cnt = 0;
+	u16 res = 0, cnt = 0;
 	u8 buf[8] = {9,5,1,7,5,3,4,6};
 	rt_base_t level;
 
 	while(1)
 	{
 		delay_ms(1000);
-		delay_ms(1000);
+//		delay_ms(1000);
+		if(Pose_Trans == 1)
+		{
+			Pose_Trans = 0;
+			for(cnt = 0; cnt < 38; ++cnt)
+				rt_kprintf("%d  ", run_posture[cnt]);
+			rt_kprintf("\r\n");
+		}
+		
 		LED1 = 1;
 //	level = rt_hw_interrupt_disable();
 //		CAN1_Send_Msg(buf,8,0x12,0x12, 0, 0);
 //	rt_hw_interrupt_enable(level);
-		delay_ms(1000);
-		delay_ms(1000);
+//		delay_ms(1000);
 		LED1 = 1;
 		
 	}
@@ -82,7 +89,7 @@ int main(void)
 		delay_us(1000);
 	LED1 = 1;
 	
-//	SPI_Slave_Init();
+	SPI_Slave_Init();
 //	leak_Init();	
 //	delay_test();	
 //	DS18B20_test();	
@@ -94,8 +101,8 @@ int main(void)
 //		LED1 = 0;
 //	}
 
-CAN1_Init(CAN_SJW_1tq,CAN_BS2_6tq,CAN_BS2_7tq,6,CAN_Mode_LoopBack);
-leak_Init();
+//CAN1_Init(CAN_SJW_1tq,CAN_BS2_6tq,CAN_BS2_7tq,6,CAN_Mode_LoopBack);
+//leak_Init();
 	
 	
 	

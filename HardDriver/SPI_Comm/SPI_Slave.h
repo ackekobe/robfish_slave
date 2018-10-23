@@ -66,6 +66,9 @@ typedef struct						//从机运行状态
 } _slave_stat;
 
 
+extern u8 Pose_Trans;
+extern u8 run_posture[Fish_Stat_Len];
+
 extern u8 SPI_Comm_Stat;
 extern u8 Slave_Stat_Buf[SPI_DATA_LEN];
 extern _slave_stat slave_stat;

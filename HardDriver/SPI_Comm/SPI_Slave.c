@@ -58,6 +58,10 @@ void SPI_Slave_Init(void)
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;							//上拉
 	GPIO_Init(GPIOA, &GPIO_InitStructure);									//初始化
 	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource5,GPIO_AF_SPI1); 					//PB5复用为 SPI1
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource6,GPIO_AF_SPI1); 					//PB6复用为 SPI1
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource7,GPIO_AF_SPI1); 					//PB7复用为 SPI1
@@ -70,7 +74,7 @@ void SPI_Slave_Init(void)
 	SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;						//设置SPI的数据大小:SPI发送接收8位帧结构
 	SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;								//串行同步时钟的空闲状态为高电平
 	SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;							//串行同步时钟的第二个跳变沿（上升或下降）数据被采样
-	SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;								//NSS信号由硬件（NSS管脚）还是软件（使用SSI位）管理:内部NSS信号有SSI位控制
+	SPI_InitStructure.SPI_NSS = SPI_NSS_Hard;								//NSS信号由硬件（NSS管脚）还是软件（使用SSI位）管理:内部NSS信号有SSI位控制
 	SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_256;	//定义波特率预分频的值:波特率预分频值为256
 	SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;						//指定数据传输从MSB位还是LSB位开始:数据传输从MSB位开始
 	SPI_InitStructure.SPI_CRCPolynomial = 7;								//CRC值计算的多项式
@@ -215,7 +219,7 @@ void SPI1_IRQHandler(void)
 					System_timing = 1;
 					time_rev_buf[SPI_Data_Cnt++] = SPI1->DR;
 #ifdef  __DEBUG
-					rt_kprintf("%d\n",time_rev_buf[SPI_Data_Cnt-1]);
+//					rt_kprintf("%d\n",time_rev_buf[SPI_Data_Cnt-1]);
 #endif
 					if(SPI_Data_Cnt >= Time_Len)
 					{
@@ -257,15 +261,16 @@ void SPI1_IRQHandler(void)
 				case DJWB:									//尾部电机
 				case DJYG:									//油缸电机
 #endif
-					Pose_Trans = 1;
+					
 					run_posture[SPI_Data_Cnt++] = SPI1->DR;
 #ifdef  __DEBUG
-					rt_kprintf("%d  ",run_posture[SPI_Data_Cnt-1]);
+//					rt_kprintf("%d  ",run_posture[SPI_Data_Cnt-1]);
 #endif
 					if(SPI_Data_Cnt >= Fish_Stat_Len)
 					{
+						Pose_Trans = 1;
 #ifdef  __DEBUG
-						rt_kprintf("\n");
+//						rt_kprintf("\n");
 #endif
 						SPI_Comm_Stat = Comm_IDLE;			//接收完成，置为IDLE状态
 					}
