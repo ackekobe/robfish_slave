@@ -75,6 +75,7 @@ extern _slave_stat slave_stat;
 
 u8 SPI_Slave_WriteByte(u8 TxData);
 void SPI_Slave_Init(void);
+void SPI_Slave_TIMode_Init(void);
 u8 Slave_ReadByte(void);
 
 #endif

@@ -89,7 +89,7 @@ int main(void)
 		delay_us(1000);
 	LED1 = 1;
 	
-	SPI_Slave_Init();
+	SPI_Slave_TIMode_Init();
 //	leak_Init();	
 //	delay_test();	
 //	DS18B20_test();	

@@ -51,17 +51,18 @@ void SPI_Slave_Init(void)
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);					//使能GPIOB时钟
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);					//使能SPI1时钟
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7;			//PB5~7复用功能输出	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7;			//PB5~7复用功能输出	
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;							//复用功能
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;							//推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;						//100MHz
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;							//上拉
 	GPIO_Init(GPIOA, &GPIO_InitStructure);									//初始化
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+//	GPIO_Init(GPIOA, &GPIO_InitStructure);
 //	
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource4,GPIO_AF_SPI1);
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource5,GPIO_AF_SPI1); 					//PB5复用为 SPI1
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource6,GPIO_AF_SPI1); 					//PB6复用为 SPI1
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource7,GPIO_AF_SPI1); 					//PB7复用为 SPI1
@@ -94,6 +95,60 @@ void SPI_Slave_Init(void)
 	SPI_Slave_WriteByte(0xFF);											//作为从机,此处写入0xFF，等待主机开启通信
 	SPI_Slave_WriteByte(0xFF);
 }
+
+
+/**************************************************
+
+函数名：SPI_Slave_TIMode_Init
+作  者：刘晓东
+日  期：2018.8.21
+版  本：V1.00
+说  明：初始化从机SPI1接口
+修改记录：
+
+**************************************************/
+
+void SPI_Slave_TIMode_Init(void)
+{
+	GPIO_InitTypeDef	GPIO_InitStructure;
+	NVIC_InitTypeDef	NVIC_InitStructure;
+	
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);					//使能GPIOB时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);					//使能SPI1时钟
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7;			//PB5~7复用功能输出	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;							//复用功能
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;							//推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;						//100MHz
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;							//上拉
+	GPIO_Init(GPIOA, &GPIO_InitStructure);									//初始化
+	
+
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource4,GPIO_AF_SPI1);
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource5,GPIO_AF_SPI1); 					//PB5复用为 SPI1
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource6,GPIO_AF_SPI1); 					//PB6复用为 SPI1
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource7,GPIO_AF_SPI1); 					//PB7复用为 SPI1
+	
+	RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1,ENABLE);						//复位SPI1
+	RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1,DISABLE);					//停止复位SPI1
+	
+	SPI1->CR1 |= SPI_BaudRatePrescaler_256;
+	SPI1->CR1 |= SPI_DataSize_8b;
+	SPI1->CR2 |= 0x0010;
+	SPI1->CR1 |= 0x0040;
+		
+	SPI_I2S_ITConfig(SPI1, SPI_IT_RXNE, ENABLE);
+	
+	NVIC_InitStructure.NVIC_IRQChannel = SPI1_IRQn;							//SPI1中断
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x01;			//抢占中断优先级
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x03;					
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+	
+	SPI_Slave_WriteByte(0xFF);											//作为从机,此处写入0xFF，等待主机开启通信
+	SPI_Slave_WriteByte(0xFF);
+}
+
 
 /**************************************************
 

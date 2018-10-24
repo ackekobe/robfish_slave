@@ -1,5 +1,5 @@
 Dependencies for Project 'glider_slave', Target 'glider_slave': (DO NOT MODIFY !)
-F (.\main.c)(0x5BCED659)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\USER -I.\TestCode -I..\FWLIB\inc -I..\Include -I..\FATFS\exfuns -I..\FATFS\src -I..\RT-Thread\inc -I..\RT-Thread\libc -I..\HardDriver\USB\STM32_USB_HOST_Library\Class\MSC\inc -I..\HardDriver\USB\STM32_USB_HOST_Library\Core\inc -I..\HardDriver\USB\STM32_USB_OTG_Driver\inc -I..\HardDriver\USB\USB_APP -I..\HardDriver\SD -I..\HardDriver\sys -I..\HardDriver\delay -I..\HardDriver\usart -I..\HardDriver\LED -I..\HardDriver\LeakDetect -I..\HardDriver\DS18B20 -I..\HardDriver\RF_Comm -I..\HardDriver\SPI_Comm -I..\HardDriver\CAN1 -I..\HardDriver\CAN2 -I..\HardDriver\RTC -I..\Application\CRC8 -I..\Application\motor -I..\Application -I..\HardDriver\WDG -I..\Application\Info_Record -I..\HardDriver\ADC-I E:\Git_robfish\glider_slave\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D_CC_ARM -DUSE_USB_OTG_FS -D__DEBUG --C99-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5BCEF69D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\USER -I.\TestCode -I..\FWLIB\inc -I..\Include -I..\FATFS\exfuns -I..\FATFS\src -I..\RT-Thread\inc -I..\RT-Thread\libc -I..\HardDriver\USB\STM32_USB_HOST_Library\Class\MSC\inc -I..\HardDriver\USB\STM32_USB_HOST_Library\Core\inc -I..\HardDriver\USB\STM32_USB_OTG_Driver\inc -I..\HardDriver\USB\USB_APP -I..\HardDriver\SD -I..\HardDriver\sys -I..\HardDriver\delay -I..\HardDriver\usart -I..\HardDriver\LED -I..\HardDriver\LeakDetect -I..\HardDriver\DS18B20 -I..\HardDriver\RF_Comm -I..\HardDriver\SPI_Comm -I..\HardDriver\CAN1 -I..\HardDriver\CAN2 -I..\HardDriver\RTC -I..\Application\CRC8 -I..\Application\motor -I..\Application -I..\HardDriver\WDG -I..\Application\Info_Record -I..\HardDriver\ADC-I E:\Git_robfish\glider_slave\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D_CC_ARM -DUSE_USB_OTG_FS -D__DEBUG --C99-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\HardDriver\sys\sys.h)(0x5B4D9F0D)
 I (..\USER\stm32f4xx.h)(0x5B4E9E52)
 I (..\CORE\core_cm4.h)(0x5B7A90D9)
@@ -70,7 +70,7 @@ I (..\HardDriver\LeakDetect\leak.h)(0x5B76730C)
 I (.\TestCode\test.h)(0x5BAAF989)
 I (..\HardDriver\DS18B20\DS18B20.h)(0x5BAB19BE)
 I (..\HardDriver\RF_Comm\RF.h)(0x5B7BA93E)
-I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCED4F4)
+I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCEF693)
 I (..\Application\CRC8\CRC8.h)(0x5B83A32D)
 I (..\Application\motor_struct.h)(0x5B921C7E)
 I (..\HardDriver\WDG\wdg.h)(0x5B8F8806)
@@ -749,7 +749,7 @@ I (..\RT-Thread\inc\rtdef.h)(0x571CB880)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
 I (..\RT-Thread\inc\rtservice.h)(0x571CB880)
 I (..\RT-Thread\inc\rtm.h)(0x571CB880)
-I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCED4F4)
+I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCEF693)
 I (..\USER\stm32f4xx_conf.h)(0x53DBB3CB)
 I (..\FWLIB\inc\stm32f4xx_adc.h)(0x53DBAFAD)
 I (..\USER\stm32f4xx.h)(0x5B4E9E52)
@@ -815,7 +815,7 @@ I (..\RT-Thread\inc\rtdef.h)(0x571CB880)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
 I (..\RT-Thread\inc\rtservice.h)(0x571CB880)
 I (..\RT-Thread\inc\rtm.h)(0x571CB880)
-F (..\RT-Thread\src\idle.c)(0x5BCED4F9)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\USER -I.\TestCode -I..\FWLIB\inc -I..\Include -I..\FATFS\exfuns -I..\FATFS\src -I..\RT-Thread\inc -I..\RT-Thread\libc -I..\HardDriver\USB\STM32_USB_HOST_Library\Class\MSC\inc -I..\HardDriver\USB\STM32_USB_HOST_Library\Core\inc -I..\HardDriver\USB\STM32_USB_OTG_Driver\inc -I..\HardDriver\USB\USB_APP -I..\HardDriver\SD -I..\HardDriver\sys -I..\HardDriver\delay -I..\HardDriver\usart -I..\HardDriver\LED -I..\HardDriver\LeakDetect -I..\HardDriver\DS18B20 -I..\HardDriver\RF_Comm -I..\HardDriver\SPI_Comm -I..\HardDriver\CAN1 -I..\HardDriver\CAN2 -I..\HardDriver\RTC -I..\Application\CRC8 -I..\Application\motor -I..\Application -I..\HardDriver\WDG -I..\Application\Info_Record -I..\HardDriver\ADC-I E:\Git_robfish\glider_slave\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D_CC_ARM -DUSE_USB_OTG_FS -D__DEBUG --C99-o ..\obj\idle.o --omf_browse ..\obj\idle.crf --depend ..\obj\idle.d)
+F (..\RT-Thread\src\idle.c)(0x5BCF04F0)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\USER -I.\TestCode -I..\FWLIB\inc -I..\Include -I..\FATFS\exfuns -I..\FATFS\src -I..\RT-Thread\inc -I..\RT-Thread\libc -I..\HardDriver\USB\STM32_USB_HOST_Library\Class\MSC\inc -I..\HardDriver\USB\STM32_USB_HOST_Library\Core\inc -I..\HardDriver\USB\STM32_USB_OTG_Driver\inc -I..\HardDriver\USB\USB_APP -I..\HardDriver\SD -I..\HardDriver\sys -I..\HardDriver\delay -I..\HardDriver\usart -I..\HardDriver\LED -I..\HardDriver\LeakDetect -I..\HardDriver\DS18B20 -I..\HardDriver\RF_Comm -I..\HardDriver\SPI_Comm -I..\HardDriver\CAN1 -I..\HardDriver\CAN2 -I..\HardDriver\RTC -I..\Application\CRC8 -I..\Application\motor -I..\Application -I..\HardDriver\WDG -I..\Application\Info_Record -I..\HardDriver\ADC-I E:\Git_robfish\glider_slave\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D_CC_ARM -DUSE_USB_OTG_FS -D__DEBUG --C99-o ..\obj\idle.o --omf_browse ..\obj\idle.crf --depend ..\obj\idle.d)
 I (..\RT-Thread\inc\rthw.h)(0x571CB880)
 I (..\RT-Thread\inc\rtthread.h)(0x571CB880)
 I (..\RT-Thread\inc\rtconfig.h)(0x5BBDAFF0)
@@ -1244,8 +1244,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
 I (..\RT-Thread\inc\rtservice.h)(0x571CB880)
 I (..\RT-Thread\inc\rtm.h)(0x571CB880)
 I (..\HardDriver\delay\delay.h)(0x5B4DC8D6)
-F (..\HardDriver\SPI_Comm\SPI_Slave.c)(0x5BCEEFA8)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\USER -I.\TestCode -I..\FWLIB\inc -I..\Include -I..\FATFS\exfuns -I..\FATFS\src -I..\RT-Thread\inc -I..\RT-Thread\libc -I..\HardDriver\USB\STM32_USB_HOST_Library\Class\MSC\inc -I..\HardDriver\USB\STM32_USB_HOST_Library\Core\inc -I..\HardDriver\USB\STM32_USB_OTG_Driver\inc -I..\HardDriver\USB\USB_APP -I..\HardDriver\SD -I..\HardDriver\sys -I..\HardDriver\delay -I..\HardDriver\usart -I..\HardDriver\LED -I..\HardDriver\LeakDetect -I..\HardDriver\DS18B20 -I..\HardDriver\RF_Comm -I..\HardDriver\SPI_Comm -I..\HardDriver\CAN1 -I..\HardDriver\CAN2 -I..\HardDriver\RTC -I..\Application\CRC8 -I..\Application\motor -I..\Application -I..\HardDriver\WDG -I..\Application\Info_Record -I..\HardDriver\ADC-I E:\Git_robfish\glider_slave\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D_CC_ARM -DUSE_USB_OTG_FS -D__DEBUG --C99-o ..\obj\spi_slave.o --omf_browse ..\obj\spi_slave.crf --depend ..\obj\spi_slave.d)
-I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCED4F4)
+F (..\HardDriver\SPI_Comm\SPI_Slave.c)(0x5BCFC27D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\USER -I.\TestCode -I..\FWLIB\inc -I..\Include -I..\FATFS\exfuns -I..\FATFS\src -I..\RT-Thread\inc -I..\RT-Thread\libc -I..\HardDriver\USB\STM32_USB_HOST_Library\Class\MSC\inc -I..\HardDriver\USB\STM32_USB_HOST_Library\Core\inc -I..\HardDriver\USB\STM32_USB_OTG_Driver\inc -I..\HardDriver\USB\USB_APP -I..\HardDriver\SD -I..\HardDriver\sys -I..\HardDriver\delay -I..\HardDriver\usart -I..\HardDriver\LED -I..\HardDriver\LeakDetect -I..\HardDriver\DS18B20 -I..\HardDriver\RF_Comm -I..\HardDriver\SPI_Comm -I..\HardDriver\CAN1 -I..\HardDriver\CAN2 -I..\HardDriver\RTC -I..\Application\CRC8 -I..\Application\motor -I..\Application -I..\HardDriver\WDG -I..\Application\Info_Record -I..\HardDriver\ADC-I E:\Git_robfish\glider_slave\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D_CC_ARM -DUSE_USB_OTG_FS -D__DEBUG --C99-o ..\obj\spi_slave.o --omf_browse ..\obj\spi_slave.crf --depend ..\obj\spi_slave.d)
+I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCEF693)
 I (..\USER\stm32f4xx_conf.h)(0x53DBB3CB)
 I (..\FWLIB\inc\stm32f4xx_adc.h)(0x53DBAFAD)
 I (..\USER\stm32f4xx.h)(0x5B4E9E52)
@@ -2339,7 +2339,7 @@ I (..\FWLIB\inc\stm32f4xx_dac.h)(0x53DBAFAD)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x53DBAFAD)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x53DBAFAD)
 I (..\Application\motor_struct.h)(0x5B921C7E)
-I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCED4F4)
+I (..\HardDriver\SPI_Comm\SPI_Slave.h)(0x5BCEF693)
 I (..\HardDriver\sys\sys.h)(0x5B4D9F0D)
 I (..\RT-Thread\inc\rtthread.h)(0x571CB880)
 I (..\RT-Thread\inc\rtconfig.h)(0x5BBDAFF0)
